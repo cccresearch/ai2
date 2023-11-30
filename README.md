@@ -11,9 +11,11 @@
 * https://chat.openai.com/share/c3ae0480-e56c-433a-8c66-026a024b9dc4
 
 User: 請問第 100 個質數是多少?
+
 ChatGPT: 第 100 個質數是 <python>search('100th prime number')</python>。
 
 User: 請問地球到火星的距離是多少?
+
 ChatGPT : 
     讓我們透過地理位置座標計算一下。
 
@@ -24,6 +26,7 @@ ChatGPT :
     現在，我們可以使用 geo_distance() 函數計算地球到火星的距離：<python>geo_distance(p1, p2)</python>。
 
 User: 請寫一個程式可以解決河內塔問題
+
 ChatGPT
 
 當然，我可以為您提供河內塔問題的解決方案。這是一個簡單的 Python 程式：
@@ -50,13 +53,16 @@ hanoi(number_of_disks, 'A', 'C', 'B')
 這個程式將會解決具有指定數量圓盤的河內塔問題。如果您希望使用不同的圓盤數量，只需修改 number_of_disks 的值即可。
 
 User: 請問 37254*22341 是多少
+
 ChatGPT: `37254 * 22341 = <python>eval('37254*22341')</python>`
 
 User: 請問 37254 乘以 22341 是多少
+
 ChatGPT: `37254 乘以 22341 等於 <python>eval('37254*22341')</python>`
 
 
 User: 請把上一個回答翻譯成英文
+
 ChatGPT: `37254 multiplied by 22341 equals <python>eval('37254*22341')</python>.`
 
 ## 後續處理
