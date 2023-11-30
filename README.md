@@ -12,18 +12,21 @@
 
 User: 請問第 100 個質數是多少?
 
-ChatGPT: 第 100 個質數是 `<python>search('100th prime number')</python>`。
+ChatGPT: 
+
+    第 100 個質數是 <python>search('100th prime number')</python>。
 
 User: 請問地球到火星的距離是多少?
 
 ChatGPT : 
+
     讓我們透過地理位置座標計算一下。
 
-    地球的經緯度是 `<python>p1=geo_location('地球')</python>`
+    地球的經緯度是 <python>p1=geo_location('地球')</python>
 
-    火星的經緯度是 `<python>p2=geo_location('火星')</python>`
+    火星的經緯度是 <python>p2=geo_location('火星')</python>
 
-    現在，我們可以使用 geo_distance() 函數計算地球到火星的距離：`<python>geo_distance(p1, p2)</python>。`
+    現在，我們可以使用 geo_distance() 函數計算地球到火星的距離：<python>geo_distance(p1, p2)</python>。
 
 User: 請寫一個程式可以解決河內塔問題
 
@@ -54,19 +57,25 @@ hanoi(number_of_disks, 'A', 'C', 'B')
 
 User: 請問 37254*22341 是多少
 
-ChatGPT: `37254 * 22341 = <python>eval('37254*22341')</python>`
+ChatGPT: 
+
+    37254 * 22341 = <python>eval('37254*22341')</python>
 
 User: 請問 37254 乘以 22341 是多少
 
-ChatGPT: `37254 乘以 22341 等於 <python>eval('37254*22341')</python>`
+ChatGPT: 
+
+    37254 乘以 22341 等於 <python>eval('37254*22341')</python>
 
 
 User: 請把上一個回答翻譯成英文
 
-ChatGPT: `37254 multiplied by 22341 equals <python>eval('37254*22341')</python>.`
+ChatGPT: 
+
+    37254 multiplied by 22341 equals <python>eval('37254*22341')</python>.
 
 ## 後續處理
 
-然後我們就只要呼叫 Python 把那些 `<python>...</python>` 刮起來的內容拿去執行，
+然後我們就只要呼叫 Python 把那些 <python>...</python> 刮起來的內容拿去執行，
 再把結果貼進去取代就可以了。
 
