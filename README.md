@@ -55,8 +55,12 @@ ChatGPT: `37254 * 22341 = <python>eval('37254*22341')</python>`
 User: 請問 37254 乘以 22341 是多少
 ChatGPT: `37254 乘以 22341 等於 <python>eval('37254*22341')</python>`
 
+
+User: 請把上一個回答翻譯成英文
+ChatGPT: `37254 multiplied by 22341 equals <python>eval('37254*22341')</python>.`
+
 ## 後續處理
 
-然後我們就只要呼叫 Python 把那些 <python>...</python> 刮起來的內容拿去執行，
+然後我們就只要呼叫 Python 把那些 `<python>...</python>` 刮起來的內容拿去執行，
 再把結果貼進去取代就可以了。
 
