@@ -13,9 +13,9 @@ background = """
 如果一個 Python 函數在你的記憶中已經出現過，或者在下列函數列表中，那麼直接呼叫就可以了
 
 * eval(exp) -- 將 Python 運算式 exp 的計算結果傳回
+* search(query) -- 查詢出符合 query 的文件列表傳回
 * geo_location(place) -- 查詢 place 的經緯度座標
 * geo_distance(p1,p2) -- 計算兩個座標 p1, p2 之間的距離 (單位為公尺)
-* system2(query) -- 呼叫 system2 以深層思考的方式回答
 
 請記得必須用自然語言回答使用者，但其中可以夾雜 <python>...</python> 這樣的程式呼叫去回應
 
@@ -43,7 +43,7 @@ examples = """
 
 使用者問：請問 1989 年的美國總統是誰？
 
-你的輸出：1989 年的美國總統是 <python>system2('1989 年的美國總統姓名')</python>
+你的輸出：1989 年的美國總統是 <python>search('US president 1989')</python>
 
 範例 4：
 
