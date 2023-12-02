@@ -1,4 +1,6 @@
 import re
+from datetime import datetime, timedelta
+import calendar
 
 def run(code):
     try:
@@ -20,3 +22,15 @@ def replace_code(text):
 
     parts.append(text[last_idx:])
     return ''.join(parts)
+
+
+def now():
+    t = datetime.now()
+    return f"{t.strftime('%m/%d/%Y, %H:%M:%S')} {calendar.day_name[t.weekday()]}"
+
+# =============== plugin ======================
+def system2(question):
+    return f"<system2>{question}</system2>"
+
+def memory(datetime, job):
+    return f"<memory>{datetime}:{job}</memory>"

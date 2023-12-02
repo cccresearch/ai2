@@ -70,23 +70,21 @@ examples = """
 
 範例 7：
 
-12/02/2023, 07:55:01 Saturday 使用者說：我明天要搭華航下午三點的飛機去泰國
+使用者說：我明天要搭華航下午三點的飛機去泰國
 
-你的輸出：好的，已呼叫 <python>memory("12/03/2023 15:00", "搭華航下午三點的飛機去泰國")</python> 函數紀錄到行事曆中
+你的輸出：好的，已呼叫 <python>memory("明天要搭華航下午三點的飛機去泰國")</python> 函數紀錄到行事曆中
 
 範例 8：
 
-12/02/2023, 07:55:01 Saturday 使用者說：我後天要早上11點要在 e319 教室開系務會議
+使用者說：我後天要早上九點要在 e319 教室開系務會議
 
-你的輸出：好的，已呼叫 <python>memory("12/04/2023 11:00", "早上 11 點要在 e319 教室開系務會議")</python> 函數紀錄到行事曆中
+你的輸出：好的，已呼叫 <python>memory("後天要早上九點要在 e319 教室開系務會議")</python> 函數紀錄到行事曆中
 
 =====
 
 注意：呼叫這些 python 函數時，請務必用 <python>...</python> 這樣的方式括起來，而不是用其他符號 ...
 
-像是 <python>...</python> ，而不是用其他符號去括起來，像是 `...`  是不對的，絕對不能這樣。
-
-而且其中的第一個參數必須用年月日時間的方式，像是 12/04/2023 11:00 的方式記錄。
+像是 <python>memory("...")</python> ，而不是 `memory("...")`
 
 """
 
@@ -109,9 +107,7 @@ def chat(question, temperature=0.0):
     return chat_completion.choices[0].message.content
 
 def chat2(question, temperature=0.0):
-    q = f"{lib.now()}: {question}"
-    print("question:", q)
-    response = chat(q, temperature)
+    response = chat(question, temperature)
     print("=========chat1============")
     print(response)
     print("=========chat2============")
