@@ -1,5 +1,6 @@
 from openai import OpenAI
 import lib
+import db
 
 background = """
 ## What would you like ChatGPT to know about you to provide better responses?
@@ -72,13 +73,13 @@ examples = """
 
 12/02/2023, 07:55:01 Saturday 使用者說：我明天要搭華航下午三點的飛機去泰國
 
-你的輸出：好的，已呼叫 <python>memory("12/03/2023 15:00", "搭華航下午三點的飛機去泰國")</python> 函數紀錄到行事曆中
+你的輸出：好的，已呼叫 <python>calendar("12/03/2023 15:00", "搭華航下午三點的飛機去泰國")</python> 函數紀錄到行事曆中
 
 範例 8：
 
 12/02/2023, 07:55:01 Saturday 使用者說：我後天要早上11點要在 e319 教室開系務會議
 
-你的輸出：好的，已呼叫 <python>memory("12/04/2023 11:00", "早上 11 點要在 e319 教室開系務會議")</python> 函數紀錄到行事曆中
+你的輸出：好的，已呼叫 <python>calendar("12/04/2023 11:00", "早上 11 點要在 e319 教室開系務會議")</python> 函數紀錄到行事曆中
 
 =====
 
@@ -86,9 +87,16 @@ examples = """
 
 像是 <python>...</python> ，而不是用其他符號去括起來，像是 `...`  是不對的，絕對不能這樣。
 
-而且其中的第一個參數必須用年月日時間的方式，像是 12/04/2023 11:00 的方式記錄。
+而且 calendar 中的第一個參數必須用年月日時間的方式，像是 12/04/2023 11:00 的方式記錄。
 
 """
+
+def open():
+    db.open("ai2.db")
+
+def close():
+    db.dump()
+    db.close()
 
 def chat(question, temperature=0.0):
     client = OpenAI(
@@ -109,7 +117,9 @@ def chat(question, temperature=0.0):
     return chat_completion.choices[0].message.content
 
 def chat2(question, temperature=0.0):
-    q = f"{lib.now()}: {question}"
+    t = lib.now()
+    lib.memory(t, question)
+    q = f"{t}: {question}"
     print("question:", q)
     response = chat(q, temperature)
     print("=========chat1============")
